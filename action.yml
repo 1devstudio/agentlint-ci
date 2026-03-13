@@ -1,0 +1,41 @@
+name: "AgentLint Audit"
+description: "Run an AI agent readiness audit on your website and fail CI if the score is below a threshold."
+author: "1devstudio"
+
+branding:
+  icon: "shield"
+  color: "blue"
+
+inputs:
+  url:
+    description: "URL to audit (e.g. https://example.com)"
+    required: true
+  api-key:
+    description: "AgentLint API key (from agentlint.io/dashboard/settings)"
+    required: true
+  threshold:
+    description: "Minimum overall score to pass (0-100). Fails the step if the score is below this."
+    required: false
+    default: "0"
+  api-url:
+    description: "AgentLint API base URL (override for self-hosted or staging)"
+    required: false
+    default: "https://agentlint.io"
+  comment:
+    description: "Post audit results as a PR comment (true/false). Requires pull_request trigger."
+    required: false
+    default: "true"
+
+outputs:
+  score:
+    description: "Overall audit score (0-100)"
+  report-url:
+    description: "Link to the full report on agentlint.io"
+  categories:
+    description: "JSON string of category scores"
+  pass:
+    description: "Whether the audit passed the threshold (true/false)"
+
+runs:
+  using: "node20"
+  main: "dist/index.js"
