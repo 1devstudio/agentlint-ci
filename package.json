@@ -1,15 +1,24 @@
 {
-  "name": "agentlint-action",
+  "name": "agentlint-ci",
   "version": "1.0.0",
-  "description": "GitHub Action to run AgentLint AI agent readiness audits in CI/CD",
-  "main": "dist/index.js",
+  "description": "Run AgentLint AI agent readiness audits in any CI/CD pipeline",
+  "bin": {
+    "agentlint-ci": "dist/cli/index.js"
+  },
+  "main": "dist/github/index.js",
   "scripts": {
-    "build": "ncc build src/index.ts --out dist --minify",
+    "build": "pnpm build:github && pnpm build:cli",
+    "build:github": "ncc build src/github/index.ts --out dist/github --minify",
+    "build:cli": "ncc build src/cli.ts --out dist/cli --minify",
     "typecheck": "tsc --noEmit"
   },
-  "keywords": ["agentlint", "ai", "audit", "github-action", "ci-cd"],
+  "keywords": ["agentlint", "ai", "audit", "github-action", "ci-cd", "cli"],
   "author": "1devstudio",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1devstudio/agentlint-ci.git"
+  },
   "dependencies": {
     "@actions/core": "^1.11.1",
     "@actions/github": "^6.0.0"
