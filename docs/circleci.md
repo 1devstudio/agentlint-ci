@@ -12,7 +12,7 @@ jobs:
     steps:
       - run:
           name: AgentLint Audit
-          command: npx agentlint-ci audit --url "$SITE_URL" --api-key "$AGENTLINT_API_KEY" --threshold 50
+          command: npx @1devstudio/agentlint audit --url "$SITE_URL" --api-key "$AGENTLINT_API_KEY" --threshold 50
 
 workflows:
   audit:
@@ -28,7 +28,7 @@ Add `AGENTLINT_API_KEY` in Project Settings → Environment Variables.
 steps:
   - run:
       name: AgentLint Audit
-      command: npx agentlint-ci audit --url "$SITE_URL" --api-key "$AGENTLINT_API_KEY" --format json > audit.json
+      command: npx @1devstudio/agentlint audit --url "$SITE_URL" --api-key "$AGENTLINT_API_KEY" --format json > audit.json
   - store_artifacts:
       path: audit.json
 ```

@@ -1,5 +1,5 @@
 {
-  "name": "@1devstudio/agentlint-ci",
+  "name": "@1devstudio/agentlint",
   "version": "1.0.0",
   "description": "Run AgentLint AI agent readiness audits in any CI/CD pipeline",
   "bin": {

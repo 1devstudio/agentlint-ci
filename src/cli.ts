@@ -4,10 +4,10 @@ import { buildJsonOutput, buildPlainText, runAudit } from "./core";
 
 function printUsage(): void {
   console.log(`
-agentlint-ci — Run AgentLint audits in any CI/CD pipeline
+@1devstudio/agentlint — Run AgentLint audits in any CI/CD pipeline
 
 Usage:
-  agentlint-ci audit --url <url> --api-key <key> [options]
+  npx @1devstudio/agentlint audit --url <url> --api-key <key> [options]
 
 Options:
   --url <url>          URL to audit (required)

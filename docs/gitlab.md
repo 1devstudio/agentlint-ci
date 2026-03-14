@@ -6,7 +6,7 @@
 agentlint:
   image: node:20-slim
   script:
-    - npx agentlint-ci audit --url "$SITE_URL" --api-key "$AGENTLINT_API_KEY" --threshold 50
+    - npx @1devstudio/agentlint audit --url "$SITE_URL" --api-key "$AGENTLINT_API_KEY" --threshold 50
   variables:
     SITE_URL: "https://your-site.com"
 ```
@@ -18,7 +18,7 @@ Add `AGENTLINT_API_KEY` as a CI/CD variable in Settings → CI/CD → Variables.
 ```yaml
 agentlint:
   script:
-    - npx agentlint-ci audit --url "$SITE_URL" --api-key "$AGENTLINT_API_KEY" --format json > audit.json
+    - npx @1devstudio/agentlint audit --url "$SITE_URL" --api-key "$AGENTLINT_API_KEY" --format json > audit.json
   artifacts:
     paths:
       - audit.json
