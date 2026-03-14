@@ -5,13 +5,14 @@
   "bin": {
     "agentlint-ci": "dist/cli/index.js"
   },
-  "main": "dist/github/index.js",
+  "main": "dist/cli/index.js",
   "scripts": {
     "build": "pnpm build:github && pnpm build:cli",
     "build:github": "ncc build src/github/index.ts --out dist/github --minify",
     "build:cli": "ncc build src/cli.ts --out dist/cli --minify",
     "typecheck": "tsc --noEmit"
   },
+  "files": ["dist/cli/index.js", "README.md"],
   "keywords": ["agentlint", "ai", "audit", "github-action", "ci-cd", "cli"],
   "author": "1devstudio",
   "license": "MIT",
