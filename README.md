@@ -26,7 +26,7 @@ Run [AgentLint.io](https://agentlint.io) AI agent readiness audits in any CI/CD 
 ## CLI (GitLab, CircleCI, Bitbucket, anything else)
 
 ```bash
-npx agentlint-ci audit --url https://your-site.com --api-key $AGENTLINT_API_KEY --threshold 50
+npx @1devstudio/agentlint-ci audit --url https://your-site.com --api-key $AGENTLINT_API_KEY --threshold 50
 ```
 
 ### CLI Options
